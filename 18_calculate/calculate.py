@@ -3,7 +3,7 @@ def calculate(operation, a, b, make_int=False, message='The result is'):
 
     - operation: 'add', 'subtract', 'multiply', or 'divide'
     - a and b: values to operate on
-    - make_int: (optional, defaults to False) if True, truncates to integer
+    - make_int: (optional, defaults to False) if True, truncates to integer. changes float to int
     - message: (optional) message to use (if not provided, use 'The result is')
 
     Performs math operation (truncating if make_int), then returns as
@@ -26,3 +26,31 @@ def calculate(operation, a, b, make_int=False, message='The result is'):
         >>> calculate('foo', 2, 3)
         
     """
+    if operation=='add':
+        if make_int:
+            solution=round(a+b)
+            return (f"{message} {solution}")
+    
+        else:
+            return (f"{message} {a+b}")
+    if operation=='subtract':
+        if make_int:
+            solution=round(a-b)
+            return (f"{message} {solution}")
+    
+        else:
+            return (f"{message} {a-b}")
+    if operation=='multiply':
+        if make_int:
+            solution=round(a*b)
+            return (f"{message} {solution}")
+    
+        else:
+            return (f"{message} {a*b}")
+    if operation=='divide':
+        if make_int:
+            solution=round(a/b)
+            return (f"{message} {solution}")
+    
+        else:
+            return (f"{message} {a/b}")
